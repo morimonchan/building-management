@@ -8,9 +8,12 @@ class Building < ApplicationRecord
   validates :building_detail   
   validates :user       
   end
-
   validates :place_id, numericality: { other_than: 1, message: "を入力してください" }          
 
   belongs_to :user
+
+  has_one_attached :image
+
+
 
 end
