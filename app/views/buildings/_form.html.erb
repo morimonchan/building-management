@@ -1,22 +1,27 @@
-<%= form_with model: モデル名, local: true do |f|%>
+<%= form_with model: @building, local: true do |f|%>
   <div class="field">
-    <%= f.label :hoge, "プロトタイプの名称" %><br />
-    <%= f.text_field :hoge, id:"prototype_title" %>
+    <%= f.label :building_name, "建物名" %><br />
+    <%= f.text_field :building_name, id:"building_name" %>
   </div>
 
   <div class="field">
-    <%= f.label :hoge, "キャッチコピー" %><br />
-    <%= f.text_area :hoge, class: :form__text, id:"prototype_catch_copy" %>
+    <%= f.label :place_id, "所在地(市・区)" %><br />
+    <%= f.collection_select(:place_id, Place.all, :id, :name, {}, {class:"select-box", id:"prefecture"}) %>
   </div>
 
   <div class="field">
-    <%= f.label :hoge, "コンセプト" %><br />
-    <%= f.text_area :hoge, class: :form__text, id:"prototype_concept" %>
+    <%= f.label :address, "住所" %><br />
+    <%= f.text_field :address, class: :form__text, id:"building_address" %>
+  </div>
+    
+  <div class="field">
+    <%= f.label :building_detail, "建物詳細" %><br />
+    <%= f.text_area :building_detail, class: :form__text, id:"building_detail" %>
   </div>
 
   <div class="field">
-    <%= f.label :hoge, "プロトタイプの画像" %><br />
-    <%= f.file_field :hoge, id:"prototype_image" %>
+    <%= f.label :image, "建物等の画像" %><br />
+    <%= f.file_field :image, id:"building_image" %>
   </div>
 
   <div class="actions">

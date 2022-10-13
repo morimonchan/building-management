@@ -10,6 +10,11 @@ class CreateBuildings < ActiveRecord::Migration[6.0]
       
     
       t.timestamps
+
+      belongs_to :user
+      has_one_attached :image
+
+
     end
   end
 end
