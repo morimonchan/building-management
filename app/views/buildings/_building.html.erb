@@ -1,0 +1,10 @@
+<div class="card">
+<%= link_to image_tag(building.image, class: :card__img ), building_path(building.id)%> 
+  <div class="card__body">
+    <%= link_to building.building_name, building_path(building.id), method: :get, class: :card__title %>
+    <p class="card__summary">
+      <%= "#{building.place.name}""#{building.address} "%>
+    </p>
+    <%= link_to "by #{building.user.name}", users_path(building.user), class: :card__user %>
+  </div>
+</div>
