@@ -7,4 +7,9 @@ class User < ApplicationRecord
   validates :name,       presence: true
   validates :employee_number,    presence: true
 
+   
+  has_many :buildings
+  # has_many :comments
+
+
 end
