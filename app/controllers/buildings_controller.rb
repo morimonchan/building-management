@@ -18,6 +18,11 @@ class BuildingsController < ApplicationController
      end
    end
 
+   def show
+    @building = Building.find(params[:id])
+   end
+
+
    private
 
    def building_params
