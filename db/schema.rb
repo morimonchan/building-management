@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_10_13_075448) do
+ActiveRecord::Schema.define(version: 2022_10_15_073925) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -44,6 +44,16 @@ ActiveRecord::Schema.define(version: 2022_10_13_075448) do
     t.index ["user_id"], name: "index_buildings_on_user_id"
   end
 
+  create_table "parkings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "parking_number", null: false
+    t.integer "price", null: false
+    t.text "parking_detail", null: false
+    t.bigint "building_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["building_id"], name: "index_parkings_on_building_id"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.integer "employee_number", null: false
@@ -60,4 +70,5 @@ ActiveRecord::Schema.define(version: 2022_10_13_075448) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "buildings", "users"
+  add_foreign_key "parkings", "buildings"
 end
