@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   root to: "buildings#index"
   post 'users', to: 'registrations#create'
 
-  resources :buildings
+  resources :buildings do
+    resources :parkings, only: [:index, :create]
+    end
 
 end

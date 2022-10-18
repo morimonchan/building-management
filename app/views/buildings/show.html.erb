@@ -74,7 +74,7 @@
         <p class="detail__message">
         <%= "駐車場情報" %>
         </p>
-        <%= link_to "詳細ページ", root_path, class: :prototype__btn %>
+        <%= link_to "詳細ページ", building_parkings_path(@building[:id]), class: :prototype__btn %>
        </div>
         <div class="prototype__manage">
           <%= link_to "編集する", root_path, class: :prototype__btn %>
@@ -84,7 +84,7 @@
        <div class="prototype__detail">
         <p class="detail__title"></p>
         <p class="detail__message">
-          <%= @building.building_detail%>
+          <%= "#" %>
         </p>
        </div>
       </div>

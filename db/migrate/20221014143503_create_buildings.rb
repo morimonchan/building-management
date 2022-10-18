@@ -7,12 +7,8 @@ class CreateBuildings < ActiveRecord::Migration[6.0]
       t.string  :address,   null: false           
       t.text    :building_detail, null: false         
       t.references :user,        null:false, foreign_key: true
-      
-    
-      t.timestamps
 
-      belongs_to :user
-      has_one_attached :image
+      t.timestamps
 
 
     end
