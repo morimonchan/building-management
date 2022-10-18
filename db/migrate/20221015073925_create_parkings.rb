@@ -4,7 +4,7 @@ class CreateParkings < ActiveRecord::Migration[6.0]
 
 
       t.integer :parking_number, null: false   
-      t.integer :price,   null: false   
+      t.text :parking_fee,   null: false   
       t.text :parking_detail,  null: false    
       t.references :building,  null: false, foreign_key: true            
       t.timestamps

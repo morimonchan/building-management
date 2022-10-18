@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 2022_10_15_073925) do
 
   create_table "parkings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "parking_number", null: false
-    t.integer "price", null: false
+    t.text "parking_fee", null: false
     t.text "parking_detail", null: false
     t.bigint "building_id", null: false
     t.datetime "created_at", precision: 6, null: false
