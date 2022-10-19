@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   post 'users', to: 'registrations#create'
 
   resources :buildings do
-    resources :parkings, only: [:index, :create]
+    resources :parkings, only: [:index,:new, :create]
     end
 
 end

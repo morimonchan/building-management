@@ -42,12 +42,10 @@ class BuildingsController < ApplicationController
     redirect_to root_path
    end
 
-   private
-
    def building_params
-     params.require(:building)
-           .permit(:building_name, :place_id, :address, :building_detail, :image)
-           .merge(user_id: current_user.id)
-   end
+    params.require(:building)
+          .permit(:building_name, :place_id, :address, :building_detail, :image)
+          .merge(user_id: current_user.id)
+  end
 
 end

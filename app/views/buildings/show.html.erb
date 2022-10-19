@@ -77,11 +77,10 @@
         <%= link_to "詳細ページ", building_parkings_path(@building[:id]), class: :prototype__btn %>
        </div>
         <div class="prototype__manage">
-          <%= link_to "編集する", root_path, class: :prototype__btn %>
+          <%= link_to "編集する", new_building_parking_path(@building[:id]), class: :prototype__btn %>
           <%= link_to "削除する", root_path, class: :prototype__btn %>
         </div>
         <div class="prototype__image">
-
         <%= image_tag @building.image, class: :card__img %>
       </div>
       <div class="prototype__comments">
@@ -89,6 +88,7 @@
         <p class="detail__title"></p>
         <p class="detail__message">
           <%= "#" %>
+          <%# <%= @parking_number %> %>
         </p>
        </div>
       </div>
