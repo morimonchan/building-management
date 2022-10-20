@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_10_15_073925) do
+ActiveRecord::Schema.define(version: 2022_10_20_130110) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -68,7 +68,22 @@ ActiveRecord::Schema.define(version: 2022_10_15_073925) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "vacancies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "room_number", null: false
+    t.date "deadline", null: false
+    t.string "floor_plan", null: false
+    t.integer "deposit", null: false
+    t.integer "rent", null: false
+    t.integer "service_fee", null: false
+    t.integer "membership_fee", null: false
+    t.bigint "building_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["building_id"], name: "index_vacancies_on_building_id"
+  end
+
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "buildings", "users"
   add_foreign_key "parkings", "buildings"
+  add_foreign_key "vacancies", "buildings"
 end
