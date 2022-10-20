@@ -1,0 +1,30 @@
+<%= form_with model: @building, local: true do |f|%>
+  <div class="field">
+    <%= f.label :building_name, "建物名" %><br />
+    <%= f.text_field :building_name, id:"building_name" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :place_id, "所在地(市・区)" %><br />
+    <%= f.collection_select(:place_id, Place.all, :id, :name, {}, {class:"select-box", id:"prefecture"}) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :address, "住所" %><br />
+    <%= f.text_field :address, class: :form__text, id:"building_address" %>
+  </div>
+    
+  <div class="field">
+    <%= f.label :building_detail, "建物詳細  (築年数、FF、エアコン、宅配ボックス、フレッツ光、Jcom、BS、ペット)" %><br />
+    <%= f.text_area :building_detail, class: :form__text, id:"building_detail"%>
+  </div>
+
+  <div class="field">
+    <%= f.label :image, "建物等の画像" %><br />
+    <%= f.file_field :image, id:"building_image" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "保存する", class: :form__btn  %>
+  </div>
+<% end %>
