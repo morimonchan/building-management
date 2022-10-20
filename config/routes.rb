@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   resources :buildings do
     resources :parkings, only: [:index,:new, :create]
+    resources :vacancies, only: [:index,:new, :create]
     end
 
 end
