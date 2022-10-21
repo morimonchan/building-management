@@ -1,22 +1,37 @@
-<%= form_with model: @building, local: true do |f|%>
+<%= form_with model: @vacancies, local: true do |f|%>
   <div class="field">
-    <%= f.label :building_name, "建物名" %><br />
-    <%= f.text_field :building_name, id:"building_name" %>
+    <%= f.label :room_number, "部屋番号" %><br />
+    <%= f.text_field :room_number, id:"room_number" %>
   </div>
 
   <div class="field">
-    <%= f.label :place_id, "所在地(市・区)" %><br />
-    <%= f.collection_select(:place_id, Place.all, :id, :name, {}, {class:"select-box", id:"prefecture"}) %>
+    <%= f.label :deadline, "期日" %><br />
+    <%= f.text_field :deadline, class: :form__text, id:"deadline" %>
   </div>
 
-  <div class="field">
-    <%= f.label :address, "住所" %><br />
-    <%= f.text_field :address, class: :form__text, id:"building_address" %>
+    <div class="field">
+    <%= f.label :floor_plan, "間取り" %><br />
+    <%= f.text_field :floor_plan, class: :form__text, id:"floor_plan" %>
   </div>
     
   <div class="field">
-    <%= f.label :building_detail, "建物詳細  (築年数、FF、エアコン、宅配ボックス、フレッツ光、Jcom、BS、ペット)" %><br />
-    <%= f.text_area :building_detail, class: :form__text, id:"building_detail"%>
+    <%= f.label :deposit, "敷金" %><br />
+    <%= f.text_area :deposit, class: :form__text, id:"deposit"%>
+  </div>
+
+  <div class="field">
+    <%= f.label :rent, "家賃" %><br />
+    <%= f.text_area :rent, class: :form__text, id:"rent"%>
+  </div>  
+  
+  <div class="field">
+    <%= f.label :service_fee, "礼金" %><br />
+    <%= f.text_area :service_fee, class: :form__text, id:"service_fee"%>
+  </div>
+
+  <div class="field">
+    <%= f.label :membership_fee, "町内会費" %><br />
+    <%= f.text_area :membership_fee, class: :form__text, id:"membership_fee"%>
   </div>
 
   <div class="field">
