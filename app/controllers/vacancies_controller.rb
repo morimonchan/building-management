@@ -5,7 +5,7 @@ class VacanciesController < ApplicationController
   end
 
   def new
-    @vacancy = vacancy.new
+    @vacancy = Vacancy.new
   end
 
 
