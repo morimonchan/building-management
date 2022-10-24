@@ -1,11 +1,11 @@
 class VacanciesController < ApplicationController
 
   def index
-    # @vacancies = vacancy.includes(:user)
+    @vacancies = vacancy.includes(:user)
   end
 
   def new
-    # @vacancy = vacancy.new
+    @vacancy = vacancy.new
   end
 
 

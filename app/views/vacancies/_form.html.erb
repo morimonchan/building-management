@@ -5,33 +5,37 @@
   </div>
 
   <div class="field">
-    <%= f.label :deadline, "期日" %><br />
+    <%= f.label :deadline, "退去予定日もしくは入居可能日" %><br />
     <%= f.text_field :deadline, class: :form__text, id:"deadline" %>
   </div>
 
     <div class="field">
     <%= f.label :floor_plan, "間取り" %><br />
-    <%= f.text_field :floor_plan, class: :form__text, id:"floor_plan" %>
+    <%= f.text_field :floor_plan,class: :form__text, id:"floor_plan" %>
   </div>
     
   <div class="field">
     <%= f.label :deposit, "敷金" %><br />
-    <%= f.text_area :deposit, class: :form__text, id:"deposit"%>
+    <%= f.text_field :deposit, id:"deposit"%>
+    <%="円"%>
   </div>
 
   <div class="field">
     <%= f.label :rent, "家賃" %><br />
-    <%= f.text_area :rent, class: :form__text, id:"rent"%>
+    <%= f.text_field :rent, id:"rent"%>
+    <%="円"%>
   </div>  
   
   <div class="field">
     <%= f.label :service_fee, "礼金" %><br />
-    <%= f.text_area :service_fee, class: :form__text, id:"service_fee"%>
+    <%= f.text_field :service_fee, id:"service_fee"%>
+    <%="円"%>
   </div>
 
   <div class="field">
     <%= f.label :membership_fee, "町内会費" %><br />
-    <%= f.text_area :membership_fee, class: :form__text, id:"membership_fee"%>
+    <%= f.text_field :membership_fee, id:"membership_fee"%>
+    <%="円"%>
   </div>
 
   <div class="field">
