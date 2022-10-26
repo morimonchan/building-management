@@ -20,6 +20,9 @@ class BuildingsController < ApplicationController
 
    def show
     @building = Building.find(params[:id])
+    @comment = Comment.new
+    @comments = @building.comments
+
    end
    
    def edit
